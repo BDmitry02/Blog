@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog
 
-## Getting Started
+## Описание
 
-First, run the development server:
+Blog — это современное приложение для публикации, фильтрации и обсуждения постов с поддержкой авторизации, комментариев и фильтров по тегам и категориям.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Технологии
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** (App Router)
+- **React** + **Redux Toolkit**
+- **Firebase** (Auth, Firestore)
+- **Tailwind CSS** + **MUI (Material UI)**
+- **Formik** + **Zod** (валидация форм)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Основные фишки
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Регистрация и вход через email/password
+- Создание, редактирование, удаление постов
+- Фильтрация постов по тегам и категориям
+- Комментарии с оптимистичным UI (моментальное добавление)
+- Модальные окна для форм и просмотра постов (адаптивные)
+- Адаптивный дизайн для мобильных
 
-## Learn More
+## Настройка Firebase
 
-To learn more about Next.js, take a look at the following resources:
+- Создайте проект в [Firebase Console](https://console.firebase.google.com/)
+- Добавьте web-app, скопируйте конфиг в `src/lib/firebase.ts`
+- Включите Email/Password Auth и Firestore
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Быстрый старт
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Установите зависимости:
+    ```sh
+    npm install
+    ```
+2. Запустите dev-сервер:
+    ```sh
+    npm run dev
+    ```
+3. Откройте [http://localhost:3000](http://localhost:3000) в браузере
 
-## Deploy on Vercel
+## Структура
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/components/` — основные компоненты (auth, posts, comments, layout, modal-window)
+- `src/tools/` — типы, константы, redux, утилиты, хуки
+- `src/lib/` — инициализация firebase
+- `src/app/` — страницы и layout
+- `src/app/loading.tsx`, `src/app/error.tsx` — глобальные страницы загрузки и ошибок (Next.js App Router)
