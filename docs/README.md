@@ -1,64 +1,64 @@
-# Blog — Минимальная документация
+# Blog — Minimal Documentation
 
-## Описание
+## Description
 
-Blog — это современное приложение на Next.js для публикации, фильтрации и обсуждения постов с поддержкой авторизации, комментариев и фильтров по тегам и категориям.
+**Blog** is a modern Next.js application for publishing, filtering, and discussing posts with support for authentication, comments, and filtering by tags and categories.
 
-## Основные технологии
+## Core Technologies
 
-- Next.js (App Router)
-- React, Redux Toolkit
-- Firebase (auth, firestore)
-- Tailwind CSS + MUI (Material UI)
-- Formik + Zod (валидация форм)
+- Next.js (App Router)  
+- React, Redux Toolkit  
+- Firebase (Auth, Firestore)  
+- Tailwind CSS + MUI (Material UI)  
+- Formik + Zod (form validation)
 
-## Структура проекта
+## Project Structure
 
-- `src/components/` — основные компоненты (auth, posts, comments, layout)
-- `src/tools/` — типы, константы, redux, утилиты
-- `src/lib/` — инициализация firebase
-- `src/app/` — страницы и layout
+- `src/components/` — main components (auth, posts, comments, layout)  
+- `src/tools/` — types, constants, redux, utilities  
+- `src/lib/` — Firebase initialization  
+- `src/app/` — pages and layout
 
-## Основные возможности
+## Key Features
 
-- Регистрация и вход через email/password
-- Создание, редактирование, удаление постов
-- Фильтрация постов по тегам и категориям
-- Комментарии к постам (оптимистичный UI)
-- Модальные окна для форм и постов
+- Registration and login via email/password  
+- Create, edit, and delete posts  
+- Filter posts by tags and categories  
+- Post comments (optimistic UI)  
+- Modal windows for forms and post previews
 
-## Запуск проекта
+## Project Startup
 
-1. Установите зависимости:
+1. Install dependencies:
     ```sh
     npm install
     ```
-2. Запустите dev-сервер:
+2. Start the dev server:
     ```sh
     npm run dev
     ```
-3. Откройте [http://localhost:3000](http://localhost:3000)
+3. Open [http://localhost:3000](http://localhost:3000)
 
-## Настройка Firebase
+## Firebase Setup
 
-- Создайте проект в [Firebase Console](https://console.firebase.google.com/)
-- Добавьте web-app, скопируйте конфиг в `src/lib/firebase.ts`
-- Включите Email/Password Auth и Firestore
+- Create a project in [Firebase Console](https://console.firebase.google.com/)  
+- Add a web app and copy the config to `src/lib/firebase.ts`  
+- Enable Email/Password Auth and Firestore
 
-## Важные файлы
+## Important Files
 
-- `src/app/loading.tsx`, `src/app/error.tsx` — глобальные страницы загрузки и ошибок (Next.js App Router)
-- `src/components/posts/add-post/AddPost.tsx` — создание поста
-- `src/components/posts/single-post/SinglePost.tsx` — просмотр поста и комментарии
-- `src/components/comments/Comments.tsx` — список и добавление комментариев
-- `src/components/auth/LoginForm/`, `RegisterForm/` — формы входа и регистрации
-- `src/components/layout/toolbar/BurgerMenu.tsx` — фильтры
+- `src/app/loading.tsx`, `src/app/error.tsx` — global loading and error pages (Next.js App Router)  
+- `src/components/posts/add-post/AddPost.tsx` — post creation  
+- `src/components/posts/single-post/SinglePost.tsx` — post view and comments  
+- `src/components/comments/Comments.tsx` — comment list and adding new ones  
+- `src/components/auth/LoginForm/`, `RegisterForm/` — login and registration forms  
+- `src/components/layout/toolbar/BurgerMenu.tsx` — filters
 
-## Советы по разработке
+## Development Tips
 
-- Для layout и типографики используйте Tailwind CSS, для сложных UI-элементов (кнопки, спиннеры) — MUI.
-- Для обработки загрузки и ошибок используйте страницы `loading.tsx` и `error.tsx` в соответствующих папках маршрутов.
-- Для работы с модальными окнами используйте компонент `ModalWindow` или MUI Modal совместно с хуком `useModal`, который предоставляет удобные методы для открытия, закрытия и управления состоянием модалок.
-- Для форм — Formik + Zod
-- Для асинхронных действий используйте useActionState
-- Для error boundary используйте стандартную страницу `error.tsx` с кнопкой восстановления (перезагрузка страницы).
+- Use **Tailwind CSS** for layout and typography, and **MUI** for complex UI elements like buttons and spinners.  
+- Use the `loading.tsx` and `error.tsx` pages in route folders to handle loading and error states.  
+- For modal windows, use the `ModalWindow` component or MUI's `Modal` together with the `useModal` hook, which provides convenient methods for opening, closing, and managing modal state.  
+- Use **Formik + Zod** for forms.  
+- Use `useActionState` for asynchronous actions.  
+- Use a standard `error.tsx` page with a recovery button (page reload) as an error boundary.
