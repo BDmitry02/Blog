@@ -1,48 +1,48 @@
 # Blog
 
-## Описание
+## Description
 
-Blog — это современное приложение для публикации, фильтрации и обсуждения постов с поддержкой авторизации, комментариев и фильтров по тегам и категориям.
+**Blog** is a modern application for publishing, filtering, and discussing posts with support for authentication, comments, and filtering by tags and categories.
 
-## Технологии
+## Technologies
 
-- **Next.js** (App Router)
-- **React** + **Redux Toolkit**
-- **Firebase** (Auth, Firestore)
-- **Tailwind CSS** + **MUI (Material UI)**
-- **Formik** + **Zod** (валидация форм)
+- **Next.js** (App Router)  
+- **React** + **Redux Toolkit**  
+- **Firebase** (Auth, Firestore)  
+- **Tailwind CSS** + **MUI (Material UI)**  
+- **Formik** + **Zod** (form validation)
 
-## Основные фишки
+## Key Features
 
-- Регистрация и вход через email/password
-- Создание, редактирование, удаление постов
-- Фильтрация постов по тегам и категориям
-- Комментарии с оптимистичным UI (моментальное добавление)
-- Модальные окна для форм и просмотра постов (адаптивные)
-- Адаптивный дизайн для мобильных
+- Registration and login via email/password  
+- Create, edit, and delete posts  
+- Filter posts by tags and categories  
+- Comments with optimistic UI (instant addition)  
+- Modal windows for forms and post preview (responsive)  
+- Responsive design for mobile devices
 
-## Настройка Firebase
+## Firebase Setup
 
-- Создайте проект в [Firebase Console](https://console.firebase.google.com/)
-- Добавьте web-app, скопируйте конфиг в `src/lib/firebase.ts`
-- Включите Email/Password Auth и Firestore
+- Create a project in [Firebase Console](https://console.firebase.google.com/)  
+- Add a web app and copy the config to `src/lib/firebase.ts`  
+- Enable Email/Password Auth and Firestore
 
-## Быстрый старт
+## Quick Start
 
-1. Установите зависимости:
+1. Install dependencies:
     ```sh
     npm install
     ```
-2. Запустите dev-сервер:
+2. Run the development server:
     ```sh
     npm run dev
     ```
-3. Откройте [http://localhost:3000](http://localhost:3000) в браузере
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Структура
+## Structure
 
-- `src/components/` — основные компоненты (auth, posts, comments, layout, modal-window)
-- `src/tools/` — типы, константы, redux, утилиты, хуки
-- `src/lib/` — инициализация firebase
-- `src/app/` — страницы и layout
-- `src/app/loading.tsx`, `src/app/error.tsx` — глобальные страницы загрузки и ошибок (Next.js App Router)
+- `src/components/` — main components (auth, posts, comments, layout, modal-window)  
+- `src/tools/` — types, constants, redux, utilities, hooks  
+- `src/lib/` — firebase initialization  
+- `src/app/` — pages and layout  
+- `src/app/loading.tsx`, `src/app/error.tsx` — global loading and error pages (Next.js App Router)
